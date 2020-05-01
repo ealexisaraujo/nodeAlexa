@@ -1,28 +1,16 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const app = express();
 const { config } = require('../config/index');
 
-app.use(bodyParser.json());
+const quotesApi = require('../routes/quotes');
 
-app.get('/', (req, res) => {
-  res.send('!Hola mundo cruel!');
-});
+// body parser
+app.use(express.json());
+app.use(helmet());
 
-app.get('/quotes', (req, res) => {
-  res.json({
-    Hola: 'Hola',
-  });
-});
-
-app.post('/addquotes', (req, res) => {
-  console.log(request.body);
-  res.json(req.body);
-});
-
-app.post('/slackQuotes', (request, response) => {
-  //TODO generate templates
-});
+// Routes
+quotesApi(app);
 
 app.listen(config.port, function () {
   console.log(`Listening http://localhost:${config.port}`);

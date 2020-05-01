@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "",
-    "start": "node src/server.js",
+    "dev": "DEBUG=app:* nodemon src/server",
+    "start": "node src/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Alexis Araujo <ala1289@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
     "mongodb": "^3.5.6"
   },
   "devDependencies": {

@@ -20,6 +20,10 @@ app.post('/addquotes', (req, res) => {
   res.json(req.body);
 });
 
+app.post('/slackQuotes', (request, response) => {
+  //TODO generate templates
+});
+
 app.listen(config.port, function () {
   console.log(`Listening http://localhost:${config.port}`);
 });

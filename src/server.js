@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
 const app = express();
+
+if (process.env.NODE_ENV !== 'production') require('morgan').morgan();
 
 app.use(bodyParser.json());
 

@@ -21,6 +21,6 @@ app.post('/addquotes', (req, res) => {
   res.json(req.body);
 });
 
-app.listen('3000', function () {
-  console.log('Servidor funcionando http://localhost:3000');
+app.listen(config.port, function () {
+  console.log(`Listening http://localhost:${config.port}`);
 });

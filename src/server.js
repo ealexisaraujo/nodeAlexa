@@ -1,8 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const { config } = require('./config/index');
-if (process.env.NODE_ENV !== 'production') require('morgan').morgan();
+const { config } = require('../config/index');
 
 app.use(bodyParser.json());
 
